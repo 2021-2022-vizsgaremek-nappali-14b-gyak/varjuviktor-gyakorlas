@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Reflection;
+using Octokit;
+using System.Diagnostics;
 
 namespace Vizsgaremek.Models
 {
@@ -56,7 +58,33 @@ namespace Vizsgaremek.Models
         public string Description { get => description; set => description = value; }
         public string Company { get => company; set => company = value; }
 
-        
+        private async void GetGithubCollaboratorsName()
+        {
+            string reponame = "gycsaba-vasvari";
+            int repoId = 431763351;
+            var client = new GitHubClient(new ProductHeaderValue(reponame));
+
+            // fejlesztők meghatározása
+            try
+            {
+                var collaborators = await client.Repository.GetAllContributors(repoId);
+                string collaboratorsName = string.Empty;
+                foreach (var collaborator in collaborators)
+                {
+                    string collaboratorLoginName = collaborator.Login;
+                    var user = await client.User.Get(collaboratorLoginName);
+                    collaboratorsName += user.Name + " (" + user.Login + ") ";
+                }
+                authors = collaboratorsName;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+            }
+        }
+
+
+
 
 
 
