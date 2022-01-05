@@ -58,6 +58,17 @@ namespace Vizsgaremek.ViewModels
                 Title = value;
             }
         }
+        public string Authors
+        {
+            get
+            {
+                return programInfo.Authors.ToString();
+            }
+            set
+            {
+                Authors = value;
+            }
+        }
 
         public ProgramVersionViewModel()
         {
