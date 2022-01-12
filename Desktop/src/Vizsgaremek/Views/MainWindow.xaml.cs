@@ -13,8 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-using Vizsgaremek.Navigation;
-using Vizsgaremek.Pages;
+using Vizsgaremek.Views.Navigation;
+using Vizsgaremek.Views.Pages;
 
 namespace Vizsgaremek
 {
@@ -60,6 +60,10 @@ namespace Vizsgaremek
                         Navigate.Navigation(programVersion);
                         
                         
+                        break;
+                    case "lviDatabase":
+                        DatabaseSourcePage databaseSource = new DatabaseSourcePage();
+                        Navigate.Navigation(databaseSource);
                         break;
                 }
                 
