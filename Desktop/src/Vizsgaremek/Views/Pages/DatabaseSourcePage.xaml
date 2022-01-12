@@ -7,6 +7,17 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <StackPanel Orientation="Horizontal" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right">
+            <Image Source="/Icons/back_icon.png" Height="48" PreviewMouseLeftButtonUp="Image_PreviewMouseLeftButtonUp"></Image>
+        </StackPanel>
+        <StackPanel>
+            <Label>Válasszon adatbázist:</Label>
+            <ListBox x:Name="listDatabaseSources"  Height="80" Width="200" ItemsSource="{Binding Path=DiskpalydDatabaseSources}" SelectedItem="{Binding Path=SelectedDatabaseSource}">
+            </ListBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label>A választott adatbázis:</Label>
+            <TextBlock FontWeight="Bold" Text="{Binding Path=SelectedDatabaseSource}" Margin="0 5 5 0"></TextBlock>
+        </StackPanel>
     </Grid>
 </UserControl>
