@@ -12,7 +12,7 @@
         </StackPanel>
         <StackPanel>
             <Label>Válasszon adatbázist:</Label>
-            <ListBox x:Name="listDatabaseSources"  Height="80" Width="200" ItemsSource="{Binding Path=DiskpalydDatabaseSources}" SelectedItem="{Binding Path=SelectedDatabaseSource}">
+            <ListBox x:Name="listDatabaseSources"  Height="80" Width="200" ItemsSource="{Binding Path=DisplayDataBaseSources}" SelectedItem="{Binding Path=SelectedDatabaseSource}">
             </ListBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal">

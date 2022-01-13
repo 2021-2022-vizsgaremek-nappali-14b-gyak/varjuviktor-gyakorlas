@@ -9,14 +9,14 @@ namespace Vizsgaremek.ViewModels
 {
     class DatabaseSourceViewModel
     {
-        private ObservableCollection<string> displayedDatabasesource;
+        private ObservableCollection<string> displayedDatabasesources;
         private string selectedDatabaseSource;
         DataBaseSources repoDatabaseSources;
         public ObservableCollection<string> DisplayedDatabaseSource
         {
             get
             {
-                return displayedDatabasesource;
+                return displayedDatabasesources;
             }
         }
 
